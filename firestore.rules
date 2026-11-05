@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['pin', 'displayName', 'userId']) &&
+             data.pin is string &&
+             data.displayName is string &&
+             data.userId is string;
+    }
+
+    function isValidContact(data) {
+      return data.keys().hasAll(['pin', 'displayName']) &&
+             data.pin is string &&
+             data.displayName is string;
+    }
+
+    function isValidMessage(data) {
+      return data.keys().hasAll(['id', 'conversationId', 'senderPin', 'content', 'timestamp']) &&
+             data.id is string &&
+             data.conversationId is string &&
+             data.senderPin is string &&
+             data.content is string;
+    }
+
+    // User profiles collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId) && isValidUser(request.resource.data);
+
+      // Contacts subcollection
+      match /contacts/{contactId} {
+        allow read, write: if isOwner(userId) && isValidContact(request.resource.data);
+      }
+    }
+
+    // Conversations collection
+    match /conversations/{conversationId} {
+      allow read, write: if isAuthenticated();
+
+      match /messages/{messageId} {
+        allow read: if isAuthenticated();
+        allow write: if isAuthenticated() && isValidMessage(request.resource.data);
+      }
+    }
+  }
+}

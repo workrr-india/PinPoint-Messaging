@@ -1,0 +1,6 @@
+{
+  "name": "PinPoint",
+  "description": "Privacy-focused messaging app featuring 8-character PIN identity, real-time D & R delivery receipts, timed messages, recall, and calling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

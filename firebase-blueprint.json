@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile and cryptographic identity",
+      "type": "object",
+      "properties": {
+        "pin": { "type": "string" },
+        "displayName": { "type": "string" },
+        "statusMessage": { "type": "string" },
+        "avatarColorHex": { "type": "string" },
+        "organization": { "type": "string" },
+        "department": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "clearanceLevel": { "type": "string" },
+        "publicKeyBase64": { "type": "string" },
+        "fingerprint": { "type": "string" },
+        "userId": { "type": "string" }
+      },
+      "required": ["pin", "displayName", "userId"]
+    },
+    "Contact": {
+      "title": "User Contact",
+      "description": "Contact item in user directory",
+      "type": "object",
+      "properties": {
+        "pin": { "type": "string" },
+        "displayName": { "type": "string" },
+        "statusMessage": { "type": "string" },
+        "avatarColorHex": { "type": "string" },
+        "department": { "type": "string" },
+        "clearanceLevel": { "type": "string" },
+        "isKeyVerified": { "type": "boolean" }
+      },
+      "required": ["pin", "displayName"]
+    },
+    "ChatMessage": {
+      "title": "Chat Message",
+      "description": "Real-time encrypted chat message",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "conversationId": { "type": "string" },
+        "senderPin": { "type": "string" },
+        "senderName": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "type": { "type": "string" },
+        "status": { "type": "string" },
+        "priority": { "type": "string" },
+        "ephemeralKeyId": { "type": "string" },
+        "isTimed": { "type": "boolean" },
+        "timeToLiveSeconds": { "type": "number" },
+        "isExpired": { "type": "boolean" },
+        "isRetracted": { "type": "boolean" },
+        "isEdited": { "type": "boolean" }
+      },
+      "required": ["id", "conversationId", "senderPin", "content", "timestamp"]
+    }
+  }
+}
