@@ -1,8 +1,16 @@
-# PinPoint Messenger (BBM & BBM Enterprise Edition)
+
+
+# PinPoint Messenger
 
 **PinPoint** is a privacy-first, enterprise-grade Android messaging application built with **Jetpack Compose** and **Material Design 3**, combining the fast consumer experience with the security and compliance features of **PinPoint Enterprise**.
 
 ---
+<img width="377" height="786" alt="image" src="https://github.com/user-attachments/assets/e655e659-8943-42b9-bec4-2e0d12223180" />
+<img width="367" height="776" alt="image" src="https://github.com/user-attachments/assets/ddf3a92d-ed28-4f9d-8044-b24cb8f5db24" />
+<img width="367" height="778" alt="image" src="https://github.com/user-attachments/assets/77aab923-8367-4ea0-a4f9-50174f125391" />
+<img width="363" height="792" alt="image" src="https://github.com/user-attachments/assets/eaa24c10-e4a4-490d-ac26-2c02fddfa18e" />
+<img width="357" height="787" alt="image" src="https://github.com/user-attachments/assets/65707f3c-9cf7-4c8b-ba5e-9423174533eb" />
+
 
 ## Key Features
 
@@ -12,7 +20,7 @@
 - Built-in dynamic QR code generator canvas for quick PIN scanning and sharing.
 - Mutual invitation ledger: zero unsolicited message routing.
 
-### 2. Real-Time Indicators & Feedback (Classic BBM UX)
+### 2. Real-Time Indicators & Feedback 
 - **Sent**: Single tick
 - **Delivered**: Iconic **D** badge (blue)
 - **Read**: Iconic **R** badge (green)
